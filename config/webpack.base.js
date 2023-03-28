@@ -187,6 +187,13 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                auto: (resourcePath) => resourcePath.endsWith('.module.less'),
+                localIdentName: '[local]_[hash:base64:10]',
+              },
+            },
           },
           // 将less文件编译成css文件
           // 需要下载 less-loader和less

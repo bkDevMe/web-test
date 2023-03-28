@@ -4,23 +4,24 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { resolveApp } = require('./utils');
 
 const projectRoot = process.cwd();
 
 const setMPA = () => {
   const entry = {};
   const htmlWebpackPlugins = [];
-  const entryFiles = glob.sync(path.join(projectRoot, './src/*/index.tsx'));
+  const entryFiles = glob.sync(path.join(projectRoot, './src/pages/*/index.tsx'));
   Object.keys(entryFiles).map((index) => {
     const entryFile = entryFiles[index];
-    const match = entryFile.match(/src\/(.*)\/index\.tsx/);
+    const match = entryFile.match(/src\/pages\/(.*)\/index\.tsx/);
     const pageName = match && match[1];
 
     entry[pageName] = entryFile;
     return htmlWebpackPlugins.push(
       new HtmlWebpackPlugin({
         inlineSource: '.css$',
-        template: path.join(projectRoot, `./src/${pageName}/index.html`),
+        template: path.join(projectRoot, `./src/pages/${pageName}/index.html`),
         filename: `${pageName}/index.html`,
         chunks: ['vendors', pageName],
         inject: true,
@@ -44,6 +45,7 @@ const setMPA = () => {
 };
 
 const { entry, htmlWebpackPlugins } = setMPA();
+console.log('xl ~ file: webpack.base.js:47 ~ entry:', entry);
 
 /*
   缓存：
@@ -125,6 +127,7 @@ module.exports = {
   resolve: {
     // 配置解析模块路径别名: 优点简写路径 缺点路径没有提示
     alias: {
+      '@': resolveApp('src'),
       // $css: resolve(__dirname, 'src/css'),
     },
     // 配置省略文件路径的后缀名
@@ -182,7 +185,9 @@ module.exports = {
           // 这个 loader 取代 style-loader。作用：提取js中的css成单独文件
           // compiles Less to CSS-file
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+          },
           // 将less文件编译成css文件
           // 需要下载 less-loader和less
           'less-loader',

@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.base');
 const devConfig = {
   mode: 'development',
   devtool: 'cheap-source-map',
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  // plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     static: './dist',
     // contentBase: resolve(__dirname, 'dist'),

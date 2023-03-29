@@ -1,2 +1,5 @@
 node_modules
 dist
+overrides1
+
+.DS_Store

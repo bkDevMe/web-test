@@ -4,8 +4,8 @@ const TerserWebpackPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
 const prodConfig = {
-  mode: 'development',
-  devtool: 'source-map',
+  mode: 'production',
+  devtool: 'hidden-source-map',
   output: {
     clean: true,
   },

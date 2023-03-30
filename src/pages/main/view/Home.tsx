@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    throw new Error('zzzzzzzzzzz');
+    // throw new Error('zzzzzzzzzzz');
   }, []);
 
   return (

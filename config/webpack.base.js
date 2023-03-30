@@ -151,7 +151,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           // "style-loader",
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           // postcss的插件 css兼容性处理
           // 在postcss.config.js 中

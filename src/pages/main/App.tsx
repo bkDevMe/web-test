@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Home from './view/Home';
 import reactImg from '@/assets/imgs/react.png';
-import xx from '@/assets/imgs/090600113377_02.png';
 import { Button, Modal } from 'antd';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -31,7 +30,7 @@ function App() {
         aaa
         <Button onClick={onClick}>测试</Button>
         <Modal title="测试" forceRender>
-          <img src={xx} style={{ width: '300px' }} />
+          <img src={reactImg} style={{ width: '300px' }} />
           <p>xxxxx</p>
         </Modal>
       </ErrorBoundary>

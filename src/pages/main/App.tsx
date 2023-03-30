@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>
-      <ErrorBoundary fallback={<div>发生错误</div>}>
+      <ErrorBoundary fallback={<div>发生错误了</div>}>
         <h2>
           <Home />
           <div>react-test</div>

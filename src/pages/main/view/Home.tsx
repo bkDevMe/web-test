@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { CssModule, NotCssModule } from '../components';
+import { CssModule, NotCssModule, MirrorButton } from '../components';
 import './Home.less';
+
+console.log('xl ~ file: Home.tsx:3 ~ MirrorButton:', MirrorButton);
 
 const Home = () => {
   const [current, setCur] = useState(false);
@@ -31,6 +33,7 @@ const Home = () => {
       >
         点击
       </button>
+      <MirrorButton />
     </div>
   );
 };

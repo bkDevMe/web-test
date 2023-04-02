@@ -131,7 +131,7 @@ module.exports = {
       // $css: resolve(__dirname, 'src/css'),
     },
     // 配置省略文件路径的后缀名
-    extensions: ['.js', '.json', '.jsx', '.css', '.tsx', '.ts'],
+    extensions: ['.tsx', '.ts', '.js', '.json', '.jsx'],
     // 告诉 webpack 解析模块是去找哪个目录
     // modules: [resolve(__dirname, '../../node_modules'), 'node_modules'],
   },

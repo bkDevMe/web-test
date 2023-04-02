@@ -1,6 +1,14 @@
 {
   "configurations": [
     {
+      "name": "webpack dev",
+      "request": "launch",
+      "runtimeArgs": ["run-script", "start"],
+      "runtimeExecutable": "npm",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
       "name": "Attach to Chrome",
       "port": 9222,
       "request": "attach",

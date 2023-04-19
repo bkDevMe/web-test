@@ -13,4 +13,8 @@ function multi(x: number, y: number) {
   log(String(x));
   return x * y;
 }
-export { sum, sub, multi };
+
+function math1() {
+  console.log('math1');
+}
+export { sum, sub, multi, math1 };

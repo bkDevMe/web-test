@@ -263,7 +263,7 @@ module.exports = {
               ],
               // 开启babel缓存
               // 第二次构建时，会读取之前的缓存
-              cacheDirectory: true,
+              // cacheDirectory: true,
             },
           },
         ],
@@ -284,9 +284,12 @@ module.exports = {
     // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       // 对输出的css文件进行重命名
-      filename: 'name/index-[contenthash:10].css',
+      filename: 'assets/index-[contenthash:10].css',
     }),
     new webpack.ProgressPlugin(),
   ].concat(htmlWebpackPlugins),
+  snapshot: {
+    managedPaths: [],
+  },
   // stats: 'errors-only',
 };

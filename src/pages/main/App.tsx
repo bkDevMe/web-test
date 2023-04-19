@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Home from './view/Home';
-import { Button } from 'antd';
+import { Button, Space } from 'antd';
 import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
@@ -23,6 +23,9 @@ function App() {
       <ErrorBoundary fallback={<div>发生错误了</div>}>
         <h2>
           <Home />
+          <Space>
+            <span>ss</span>
+          </Space>
         </h2>
         <Button onClick={onClick}>测试</Button>
       </ErrorBoundary>

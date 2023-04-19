@@ -5,6 +5,7 @@ const baseConfig = require('./webpack.base');
 
 const prodConfig = {
   mode: 'production',
+  // mode: 'development',
   devtool: 'hidden-source-map',
   output: {
     clean: true,

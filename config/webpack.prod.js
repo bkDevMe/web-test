@@ -1,17 +1,23 @@
 const { merge } = require('webpack-merge');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const baseConfig = require('./webpack.base');
+const process = require('process');
+
+const mode = process.env.mode;
+console.log('xl ~ file: webpack.prod.js:9 ~ mode:', mode);
 
 const prodConfig = {
-  mode: 'production',
-  // mode: 'development',
+  // mode: 'production',
+  mode: 'development',
   devtool: 'hidden-source-map',
   output: {
     clean: true,
   },
-  plugins: [new CssMinimizerPlugin()],
+  plugins: [new CssMinimizerPlugin(), mode === 'analyze' && new BundleAnalyzerPlugin()],
   optimization: {
+    usedExports: true,
     splitChunks: {
       chunks: 'all',
       // 默认值，可以不写~

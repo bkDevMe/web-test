@@ -1,4 +1,5 @@
-import { sum, blue, aa } from './utils';
+import { sum, blue } from './utils';
+import { trim } from 'lodash';
 
 const bb = 'zzz';
 
@@ -8,4 +9,4 @@ sum(3, 5);
 
 blue();
 
-aa();
+trim('aaa');

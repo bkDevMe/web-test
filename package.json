@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "analyze": "mode=analyze webpack build --config ./config/webpack.prod.js",
     "start": "webpack serve --config ./config/webpack.dev.js",
     "build": "webpack build --config ./config/webpack.prod.js",
     "f2elint-scan": "f2elint scan",
@@ -31,7 +32,8 @@
     "lodash": "^4.17.21",
     "postcss-loader": "^7.0.1",
     "react-refresh": "^0.14.0",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "webpack-bundle-analyzer": "^4.8.0"
   },
   "dependencies": {
     "antd": "^4.22.8",
